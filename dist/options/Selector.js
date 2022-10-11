@@ -1,9 +1,14 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -16,7 +21,7 @@ var OptionContext_1 = require("./OptionContext");
 function getComponentOptionValue(component) {
     var optionValue = component.optionValue;
     if (!optionValue) {
-        throw new Error("optionValue should be provided for " + component);
+        throw new Error("optionValue should be provided for ".concat(component));
     }
     return optionValue;
 }
@@ -29,7 +34,7 @@ var Selector = /** @class */ (function (_super) {
         get: function () {
             return this.context.optionContext;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Selector.prototype.UNSAFE_componentWillMount = function () {
@@ -69,7 +74,7 @@ var Selector = /** @class */ (function (_super) {
         var values = React.Children.map(children, 
         // TODO: also validate and throw error if we don't see optionValue
         function (child) { return getComponentOptionValue(child.type); });
-        if (new Set(values).size !== values.length) {
+        if (!values || new Set(values).size !== values.length) {
             throw new Error('Duplicate values');
         }
         this.optionContext.setOptions(option.key, values);

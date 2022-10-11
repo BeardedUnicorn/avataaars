@@ -24,8 +24,6 @@ export default class Avatar extends React.Component<Props> {
     return (
       <svg
         style={this.props.style}
-        width='264px'
-        height='280px'
         viewBox='0 0 264 280'
         version='1.1'
         xmlns='http://www.w3.org/2000/svg'

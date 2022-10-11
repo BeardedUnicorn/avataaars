@@ -1,9 +1,14 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -18,11 +23,11 @@ var ShortHairSides = /** @class */ (function (_super) {
     __extends(ShortHairSides, _super);
     function ShortHairSides() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.mask1 = unique_id_1.uniqueId('react-mask-');
-        _this.mask2 = unique_id_1.uniqueId('react-mask-');
-        _this.path1 = unique_id_1.uniqueId('react-path-');
-        _this.path2 = unique_id_1.uniqueId('react-path-');
-        _this.path3 = unique_id_1.uniqueId('react-path-');
+        _this.mask1 = (0, unique_id_1.uniqueId)('react-mask-');
+        _this.mask2 = (0, unique_id_1.uniqueId)('react-mask-');
+        _this.path1 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.path2 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.path3 = (0, unique_id_1.uniqueId)('react-path-');
         return _this;
     }
     ShortHairSides.prototype.render = function () {
@@ -35,7 +40,7 @@ var ShortHairSides = /** @class */ (function (_super) {
             React.createElement("mask", { id: mask2, fill: 'white' },
                 React.createElement("use", { xlinkHref: '#' + path1 })),
             React.createElement("g", { id: 'Mask' }),
-            React.createElement("g", { id: 'Top/Short-Hair/Sides', mask: "url(#" + mask2 + ")" },
+            React.createElement("g", { id: 'Top/Short-Hair/Sides', mask: "url(#".concat(mask2, ")") },
                 React.createElement("g", { transform: 'translate(-1.000000, 0.000000)' },
                     React.createElement(facialHair_1.default, null),
                     React.createElement("g", { id: 'Hair', strokeWidth: '1', fillRule: 'evenodd', transform: 'translate(70.000000, 74.000000)' },

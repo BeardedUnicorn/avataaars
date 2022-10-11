@@ -1,15 +1,21 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AvatarStyle = void 0;
 var React = require("react");
 var accessories_1 = require("./top/accessories");
 var clothes_1 = require("./clothes");
@@ -29,7 +35,7 @@ var Avatar = /** @class */ (function (_super) {
     Avatar.prototype.render = function () {
         var _a = this.props, avatarStyle = _a.avatarStyle, backgroundColor = _a.backgroundColor;
         var circle = avatarStyle === AvatarStyle.Circle;
-        return (React.createElement("svg", { style: this.props.style, width: '264px', height: '280px', viewBox: '0 0 264 280', version: '1.1', xmlns: 'http://www.w3.org/2000/svg', xmlnsXlink: 'http://www.w3.org/1999/xlink' },
+        return (React.createElement("svg", { style: this.props.style, viewBox: '0 0 264 280', version: '1.1', xmlns: 'http://www.w3.org/2000/svg', xmlnsXlink: 'http://www.w3.org/1999/xlink' },
             React.createElement("desc", null, "Created with getavataaars.com"),
             React.createElement("defs", null,
                 React.createElement("circle", { id: 'path-1', cx: '120', cy: '120', r: '120' }),

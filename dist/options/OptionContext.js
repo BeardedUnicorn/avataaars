@@ -1,11 +1,14 @@
 "use strict";
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var OptionContext = /** @class */ (function () {
@@ -28,14 +31,14 @@ var OptionContext = /** @class */ (function () {
         get: function () {
             return this._options;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(OptionContext.prototype, "state", {
         get: function () {
             return this._state;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     OptionContext.prototype.addStateChangeListener = function (listener) {
@@ -55,14 +58,14 @@ var OptionContext = /** @class */ (function () {
         // TODO:
         var optionState = this.getOptionState(key);
         this.setState((_a = {},
-            _a[key] = __assign({}, optionState, { available: optionState.available + 1 }),
+            _a[key] = __assign(__assign({}, optionState), { available: optionState.available + 1 }),
             _a));
     };
     OptionContext.prototype.optionExit = function (key) {
         var _a;
         var optionState = this.getOptionState(key);
         this.setState((_a = {},
-            _a[key] = __assign({}, optionState, { available: optionState.available - 1 }),
+            _a[key] = __assign(__assign({}, optionState), { available: optionState.available - 1 }),
             _a));
     };
     OptionContext.prototype.getOptionState = function (key) {
@@ -94,18 +97,17 @@ var OptionContext = /** @class */ (function () {
         var _a;
         var optionState = this.getOptionState(key);
         this.setState((_a = {},
-            _a[key] = __assign({}, optionState, { defaultValue: defaultValue }),
+            _a[key] = __assign(__assign({}, optionState), { defaultValue: defaultValue }),
             _a));
     };
     OptionContext.prototype.setOptions = function (key, options) {
         var _a;
         this.setState((_a = {},
-            _a[key] = __assign({}, this.state[key], { key: key,
-                options: options }),
+            _a[key] = __assign(__assign({}, this.state[key]), { key: key, options: options }),
             _a));
     };
     OptionContext.prototype.setState = function (state) {
-        this._state = __assign({}, this.state, state);
+        this._state = __assign(__assign({}, this.state), state);
         this.notifyListener();
     };
     OptionContext.prototype.notifyListener = function () {

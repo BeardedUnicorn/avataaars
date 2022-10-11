@@ -1,9 +1,14 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -18,16 +23,16 @@ var WinterHat4 = /** @class */ (function (_super) {
     __extends(WinterHat4, _super);
     function WinterHat4() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.filter1 = unique_id_1.uniqueId('react-filter-');
-        _this.mask1 = unique_id_1.uniqueId('react-mask-');
-        _this.mask2 = unique_id_1.uniqueId('react-mask-');
-        _this.mask3 = unique_id_1.uniqueId('react-mask-');
-        _this.mask4 = unique_id_1.uniqueId('react-mask-');
-        _this.path1 = unique_id_1.uniqueId('react-path-');
-        _this.path2 = unique_id_1.uniqueId('react-path-');
-        _this.path3 = unique_id_1.uniqueId('react-path-');
-        _this.path4 = unique_id_1.uniqueId('react-path-');
-        _this.path5 = unique_id_1.uniqueId('react-path-');
+        _this.filter1 = (0, unique_id_1.uniqueId)('react-filter-');
+        _this.mask1 = (0, unique_id_1.uniqueId)('react-mask-');
+        _this.mask2 = (0, unique_id_1.uniqueId)('react-mask-');
+        _this.mask3 = (0, unique_id_1.uniqueId)('react-mask-');
+        _this.mask4 = (0, unique_id_1.uniqueId)('react-mask-');
+        _this.path1 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.path2 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.path3 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.path4 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.path5 = (0, unique_id_1.uniqueId)('react-path-');
         return _this;
     }
     WinterHat4.prototype.render = function () {
@@ -58,7 +63,7 @@ var WinterHat4 = /** @class */ (function (_super) {
                         React.createElement("use", { xlinkHref: '#' + path3 })),
                     React.createElement("use", { id: 'light', fillOpacity: '0.300000012', fill: '#FFFFFF', xlinkHref: '#' + path3 })),
                 React.createElement("g", { id: 'hat-front' },
-                    React.createElement("use", { fill: 'black', fillOpacity: '1', filter: "url(#" + path4 + ")", xlinkHref: '#' + path4 }),
+                    React.createElement("use", { fill: 'black', fillOpacity: '1', filter: "url(#".concat(path4, ")"), xlinkHref: '#' + path4 }),
                     React.createElement("use", { fill: '#F4F4F4', fillRule: 'evenodd', xlinkHref: '#' + path4 })),
                 React.createElement(facialHair_1.default, null),
                 this.props.children)));

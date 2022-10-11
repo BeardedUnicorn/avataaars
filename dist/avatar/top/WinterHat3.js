@@ -1,9 +1,14 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -18,12 +23,12 @@ var WinterHat3 = /** @class */ (function (_super) {
     __extends(WinterHat3, _super);
     function WinterHat3() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.filter1 = unique_id_1.uniqueId('react-filter-');
-        _this.mask1 = unique_id_1.uniqueId('react-mask-');
-        _this.mask2 = unique_id_1.uniqueId('react-mask-');
-        _this.path1 = unique_id_1.uniqueId('react-path-');
-        _this.path2 = unique_id_1.uniqueId('react-path-');
-        _this.path3 = unique_id_1.uniqueId('react-path-');
+        _this.filter1 = (0, unique_id_1.uniqueId)('react-filter-');
+        _this.mask1 = (0, unique_id_1.uniqueId)('react-mask-');
+        _this.mask2 = (0, unique_id_1.uniqueId)('react-mask-');
+        _this.path1 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.path2 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.path3 = (0, unique_id_1.uniqueId)('react-path-');
         return _this;
     }
     WinterHat3.prototype.render = function () {
@@ -47,7 +52,7 @@ var WinterHat3 = /** @class */ (function (_super) {
                     React.createElement("use", { id: 'hat-mask', fill: '#D8D8D8', xlinkHref: '#' + path1 }),
                     React.createElement(HatColor_1.default, { maskID: mask2, defaultColor: 'Red' })),
                 React.createElement("g", { id: 'hat-front' },
-                    React.createElement("use", { fill: 'black', fillOpacity: '1', filter: "url(#" + path2 + ")", xlinkHref: '#' + path2 }),
+                    React.createElement("use", { fill: 'black', fillOpacity: '1', filter: "url(#".concat(path2, ")"), xlinkHref: '#' + path2 }),
                     React.createElement("use", { fill: '#F4F4F4', fillRule: 'evenodd', xlinkHref: '#' + path2 })),
                 React.createElement(facialHair_1.default, null),
                 this.props.children)));

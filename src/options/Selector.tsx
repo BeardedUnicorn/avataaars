@@ -73,7 +73,7 @@ export default class Selector extends React.Component<Props> {
       // TODO: also validate and throw error if we don't see optionValue
       child => getComponentOptionValue((child as any).type)
     )
-    if (new Set(values).size !== values.length) {
+    if (!values || new Set(values).size !== values.length) {
       throw new Error('Duplicate values')
     }
     this.optionContext.setOptions(option.key, values)

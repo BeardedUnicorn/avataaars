@@ -1,11 +1,12 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { PixelRatio } from 'react-native'
-import { SvgXml } from 'react-native-svg'
+import { SvgCss } from 'react-native-svg'
 import * as ReactDOMServer from 'react-dom/server'
 
 import Avatar, { AvatarStyle } from './avatar'
 import { OptionContext, allOptions } from './options'
+import {ImageSVG, Skia} from "@shopify/react-native-skia";
 
 // import { default as PieceComponent } from './avatar/piece';
 
@@ -25,9 +26,9 @@ export interface Props {
   eyebrowType?: string
   mouthType?: string
   skinColor?: string
-  pieceType?:string
-  pieceSize?:string
-  viewBox?:string
+  pieceType?: string
+  pieceSize?: string
+  viewBox?: string
 }
 
 class AvatarComponent extends React.Component<Props> {
@@ -103,18 +104,45 @@ class AvatarComponent extends React.Component<Props> {
 //   }
 // }
 
-export const AvatarReactNativeSvg: React.SFC<Props & { size }> = ({ size, ...childProps }) => (
-  <SvgXml
-    xml={ReactDOMServer.renderToString(
-      <AvatarComponent
-        style={{
-          width: PixelRatio.getPixelSizeForLayoutSize(size),
-          height: PixelRatio.getPixelSizeForLayoutSize(size),
-        }}
-        {...childProps}
-      />,
-    )}
-    width={size}
-    height={size}
-  />
-)
+
+export const AvatarReactNativeSkia: React.SFC<Props & { size }> = ({ size, ...childProps }) => {
+  const pixelRatio = PixelRatio.getPixelSizeForLayoutSize(size);
+  const svg = Skia.SVG.MakeFromString(ReactDOMServer.renderToString(
+    <AvatarComponent
+      style={{
+        width: pixelRatio,
+        height: pixelRatio,
+      }}
+      {...childProps}
+    />
+  ));
+  return ( svg ? (
+      <ImageSVG
+        svg={svg}
+        x={0}
+        y={0}
+        width={pixelRatio}
+        height={pixelRatio}
+      />
+    ) : null
+  )
+}
+
+
+export const AvatarReactNativeSvg: React.SFC<Props & { size }> = ({ size, ...childProps }) => {
+  return (
+    <SvgCss
+      xml={ReactDOMServer.renderToString(
+        <AvatarComponent
+          style={{
+            width: PixelRatio.getPixelSizeForLayoutSize(size),
+            height: PixelRatio.getPixelSizeForLayoutSize(size),
+          }}
+          {...childProps}
+        />,
+      )}
+      width={size}
+      height={size}
+    />
+  )
+}

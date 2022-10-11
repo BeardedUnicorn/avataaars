@@ -1,15 +1,21 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AvatarStyle = void 0;
 var React = require("react");
 var clothes_1 = require("./clothes");
 var Graphics_1 = require("./clothes/Graphics");
@@ -32,10 +38,10 @@ var PieceComponent = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     PieceComponent.prototype.render = function () {
-        return (React.createElement("svg", { style: this.props.style, width: this.props.pieceSize + "px", height: this.props.pieceSize + "px", viewBox: this.props.viewBox || "0 0 264 280", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink" },
+        return (React.createElement("svg", { style: this.props.style, width: "".concat(this.props.pieceSize, "px"), height: "".concat(this.props.pieceSize, "px"), viewBox: this.props.viewBox || '0 0 264 280', version: '1.1', xmlns: 'http://www.w3.org/2000/svg', xmlnsXlink: 'http://www.w3.org/1999/xlink' },
             this.props.pieceType === 'top' && React.createElement(top_1.default, null),
             this.props.pieceType === 'clothe' && React.createElement(clothes_1.default, null),
-            this.props.pieceType === 'graphics' && React.createElement(Graphics_1.default, { maskID: "1234" }),
+            this.props.pieceType === 'graphics' && React.createElement(Graphics_1.default, { maskID: '1234' }),
             (this.props.pieceType === 'accessories' ||
                 this.props.pieceType === 'accesories') && React.createElement(accessories_1.default, null),
             this.props.pieceType === 'facialHair' && React.createElement(facialHair_1.default, null),
@@ -43,7 +49,7 @@ var PieceComponent = /** @class */ (function (_super) {
             this.props.pieceType === 'eyebrows' && React.createElement(eyebrow_1.default, null),
             this.props.pieceType === 'mouth' && React.createElement(mouth_1.default, null),
             this.props.pieceType === 'nose' && React.createElement(nose_1.default, null),
-            this.props.pieceType === 'skin' && React.createElement(Skin_1.default, { maskID: "5678" })));
+            this.props.pieceType === 'skin' && React.createElement(Skin_1.default, { maskID: '5678' })));
     };
     return PieceComponent;
 }(React.Component));

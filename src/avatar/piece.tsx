@@ -14,7 +14,7 @@ import Skin from './Skin'
 
 export enum AvatarStyle {
   Circle = 'Circle',
-  Transparent = 'Transparent',
+  Transparent = 'Transparent'
 }
 
 export interface Props {
@@ -26,19 +26,19 @@ export interface Props {
 }
 
 export default class PieceComponent extends React.Component<Props> {
-  render() {
+  render () {
     return (
       <svg
         style={this.props.style}
         width={`${this.props.pieceSize}px`}
         height={`${this.props.pieceSize}px`}
-        viewBox={this.props.viewBox || "0 0 264 280"}
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink">
+        viewBox={this.props.viewBox || '0 0 264 280'}
+        version='1.1'
+        xmlns='http://www.w3.org/2000/svg'
+        xmlnsXlink='http://www.w3.org/1999/xlink'>
         {this.props.pieceType === 'top' && <Top />}
         {this.props.pieceType === 'clothe' && <Clothe />}
-        {this.props.pieceType === 'graphics' && <Graphics maskID="1234" />}
+        {this.props.pieceType === 'graphics' && <Graphics maskID='1234' />}
         {(this.props.pieceType === 'accessories' ||
           this.props.pieceType === 'accesories') && <Accessories />}
         {this.props.pieceType === 'facialHair' && <FacialHair />}
@@ -46,7 +46,7 @@ export default class PieceComponent extends React.Component<Props> {
         {this.props.pieceType === 'eyebrows' && <Eyebrows />}
         {this.props.pieceType === 'mouth' && <Mouth />}
         {this.props.pieceType === 'nose' && <Nose />}
-        {this.props.pieceType === 'skin' && <Skin maskID="5678" />}
+        {this.props.pieceType === 'skin' && <Skin maskID='5678' />}
       </svg>
     )
   }

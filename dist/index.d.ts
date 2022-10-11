@@ -19,6 +19,9 @@ export interface Props {
     pieceSize?: string;
     viewBox?: string;
 }
+export declare const AvatarReactNativeSkia: React.SFC<Props & {
+    size: any;
+}>;
 export declare const AvatarReactNativeSvg: React.SFC<Props & {
     size: any;
 }>;

@@ -1,9 +1,14 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -16,10 +21,10 @@ var Squint = /** @class */ (function (_super) {
     __extends(Squint, _super);
     function Squint() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.path1 = unique_id_1.uniqueId('react-path-');
-        _this.path2 = unique_id_1.uniqueId('react-path-');
-        _this.mask1 = unique_id_1.uniqueId('react-mask-');
-        _this.mask2 = unique_id_1.uniqueId('react-mask-');
+        _this.path1 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.path2 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.mask1 = (0, unique_id_1.uniqueId)('react-mask-');
+        _this.mask2 = (0, unique_id_1.uniqueId)('react-mask-');
         return _this;
     }
     Squint.prototype.render = function () {
@@ -32,12 +37,12 @@ var Squint = /** @class */ (function (_super) {
                 React.createElement("mask", { id: mask1, fill: 'white' },
                     React.createElement("use", { xlinkHref: '#' + path1 })),
                 React.createElement("use", { id: 'The-white-stuff', fill: '#FFFFFF', xlinkHref: '#' + path1 }),
-                React.createElement("circle", { fillOpacity: '0.699999988', fill: '#000000', mask: "url(#" + mask1 + ")", cx: '14', cy: '10', r: '6' })),
+                React.createElement("circle", { fillOpacity: '0.699999988', fill: '#000000', mask: "url(#".concat(mask1, ")"), cx: '14', cy: '10', r: '6' })),
             React.createElement("g", { id: 'Eye', transform: 'translate(68.000000, 13.000000)' },
                 React.createElement("mask", { id: mask2, fill: 'white' },
                     React.createElement("use", { xlinkHref: '#' + path2 })),
                 React.createElement("use", { id: 'Eyeball-Mask', fill: '#FFFFFF', xlinkHref: '#' + path2 }),
-                React.createElement("circle", { fillOpacity: '0.699999988', fill: '#000000', mask: "url(#" + mask2 + ")", cx: '14', cy: '10', r: '6' }))));
+                React.createElement("circle", { fillOpacity: '0.699999988', fill: '#000000', mask: "url(#".concat(mask2, ")"), cx: '14', cy: '10', r: '6' }))));
     };
     Squint.optionValue = 'Squint';
     return Squint;

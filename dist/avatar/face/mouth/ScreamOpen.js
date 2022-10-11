@@ -1,9 +1,14 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -16,8 +21,8 @@ var ScreamOpen = /** @class */ (function (_super) {
     __extends(ScreamOpen, _super);
     function ScreamOpen() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.path1 = unique_id_1.uniqueId('react-path-');
-        _this.mask1 = unique_id_1.uniqueId('react-mask-');
+        _this.path1 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.mask1 = (0, unique_id_1.uniqueId)('react-mask-');
         return _this;
     }
     ScreamOpen.prototype.render = function () {
@@ -28,8 +33,8 @@ var ScreamOpen = /** @class */ (function (_super) {
             React.createElement("mask", { id: mask1, fill: 'white' },
                 React.createElement("use", { xlinkHref: '#' + path1, transform: 'translate(54.000000, 26.999998) scale(1, -1) translate(-54.000000, -26.999998) ' })),
             React.createElement("use", { id: 'Mouth', fillOpacity: '0.699999988', fill: '#000000', fillRule: 'evenodd', transform: 'translate(54.000000, 26.999998) scale(1, -1) translate(-54.000000, -26.999998) ', xlinkHref: '#' + path1 }),
-            React.createElement("rect", { id: 'Teeth', fill: '#FFFFFF', fillRule: 'evenodd', mask: "url(#" + mask1 + ")", x: '39', y: '2', width: '31', height: '16', rx: '5' }),
-            React.createElement("g", { id: 'Tongue', strokeWidth: '1', fillRule: 'evenodd', mask: "url(#" + mask1 + ")", fill: '#FF4F6D' },
+            React.createElement("rect", { id: 'Teeth', fill: '#FFFFFF', fillRule: 'evenodd', mask: "url(#".concat(mask1, ")"), x: '39', y: '2', width: '31', height: '16', rx: '5' }),
+            React.createElement("g", { id: 'Tongue', strokeWidth: '1', fillRule: 'evenodd', mask: "url(#".concat(mask1, ")"), fill: '#FF4F6D' },
                 React.createElement("g", { transform: 'translate(38.000000, 32.000000)', id: 'Say-ahhhh' },
                     React.createElement("circle", { cx: '11', cy: '11', r: '11' }),
                     React.createElement("circle", { cx: '21', cy: '11', r: '11' })))));

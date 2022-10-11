@@ -1,50 +1,41 @@
 {
-  "name": "@spalger/react-native-avataaars-svg",
-  "version": "1.2.1-reactnativesvgsupport3",
-  "description": "React component for avataaars ",
+  "name": "@beardedunicorn/react-native-avataaars-svg",
+  "version": "1.0.3",
+  "description": "React component for avataaars",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
     "react",
     "avatar"
   ],
-  "repository": "git@github.com:spalger/avataaars.git",
+  "repository": "git@github.com:beardedunicorn/avataaars.git",
   "author": "Fang-Pen Lin <hello@fangpenlin.com>",
   "maintainers": [
-    "Spencer Alger <email@spalger.com>"
+    "Mike Herold <archangel.herold@gmail.com>"
   ],
   "license": "MIT",
   "scripts": {
     "build": "tsc"
   },
   "peerDependencies": {
-    "react": "16.9.0",
-    "react-native": "^0.61.4"
+    "react": "17.0.0",
+    "react-native": "^0.70.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@types/react": "^16.0.25",
+    "@babel/core": "^7.12.9",
+    "@types/react": "^17.0.0",
     "import-sort-style-renke": "^4.2.0",
-    "react-native": "^0.61.4",
-    "react": "16.9.0",
+    "react": "17.0.0",
+    "react-native": "^0.70.0",
     "tslint": "^5.8.0",
     "tslint-config-standard": "^7.0.0",
     "tslint-react": "^3.2.0",
-    "typescript": "^2.6.2"
+    "typescript": "^4.8.3"
   },
   "dependencies": {
+    "@shopify/react-native-skia": "^0.1.149",
     "prop-types": "^15.6.0",
-    "react-dom": "^16.12.0",
-    "react-native-svg": "^9.13.3"
-  },
-  "importSort": {
-    ".js, .jsx, .es6, .es": {
-      "parser": "babylon",
-      "style": "import-sort-style-renke"
-    },
-    ".ts, .tsx": {
-      "parser": "typescript",
-      "style": "import-sort-style-renke"
-    }
+    "react-dom": "^17.0.0",
+    "react-native-svg": "^13.1.0"
   }
 }

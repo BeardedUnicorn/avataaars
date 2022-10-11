@@ -1,9 +1,14 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -18,11 +23,11 @@ var WinterHat2 = /** @class */ (function (_super) {
     __extends(WinterHat2, _super);
     function WinterHat2() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.mask1 = unique_id_1.uniqueId('react-mask-');
-        _this.mask2 = unique_id_1.uniqueId('react-mask-');
-        _this.path1 = unique_id_1.uniqueId('react-path-');
-        _this.path2 = unique_id_1.uniqueId('react-path-');
-        _this.path3 = unique_id_1.uniqueId('react-path-');
+        _this.mask1 = (0, unique_id_1.uniqueId)('react-mask-');
+        _this.mask2 = (0, unique_id_1.uniqueId)('react-mask-');
+        _this.path1 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.path2 = (0, unique_id_1.uniqueId)('react-path-');
+        _this.path3 = (0, unique_id_1.uniqueId)('react-path-');
         return _this;
     }
     WinterHat2.prototype.render = function () {
@@ -48,7 +53,7 @@ var WinterHat2 = /** @class */ (function (_super) {
                         React.createElement("use", { xlinkHref: '#' + path1 })),
                     React.createElement("use", { id: 'Combined-Shape', fill: '#F4F4F4', xlinkHref: '#' + path1 }),
                     React.createElement(HatColor_1.default, { maskID: mask2, defaultColor: 'Blue01' }),
-                    React.createElement("rect", { id: 'color-dark', fillOpacity: '0.2', fill: '#000000', x: '-1', y: '21', width: '146', height: '46', mask: "url(#" + mask2 + ")" }),
+                    React.createElement("rect", { id: 'color-dark', fillOpacity: '0.2', fill: '#000000', x: '-1', y: '21', width: '146', height: '46', mask: "url(#".concat(mask2, ")") }),
                     React.createElement("g", { id: 'light-triangles', transform: 'translate(29.000000, 32.000000)', fill: '#FFFFFF', fillOpacity: '0.5' },
                         React.createElement("polygon", { id: 'Triangle', transform: 'translate(12.500000, 9.000000) rotate(180.000000) translate(-12.500000, -9.000000) ', points: '12.5 0 25 18 0 18' }),
                         React.createElement("polygon", { id: 'Triangle', transform: 'translate(43.500000, 9.000000) rotate(180.000000) translate(-43.500000, -9.000000) ', points: '43.5 0 56 18 31 18' }),
