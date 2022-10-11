@@ -1,6 +1,6 @@
 {
-  "name": "@beardedunicorn/react-native-avataaars-svg",
-  "version": "1.0.3",
+  "name": "@beardedunicorn/react-native-avataaars-skia",
+  "version": "1.0.4",
   "description": "React component for avataaars",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,10 +30,10 @@
     "tslint": "^5.8.0",
     "tslint-config-standard": "^7.0.0",
     "tslint-react": "^3.2.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@shopify/react-native-skia": "^0.1.149",
+    "@shopify/react-native-skia": "^0.1.155",
     "prop-types": "^15.6.0",
     "react-dom": "^17.0.0",
     "react-native-svg": "^13.1.0"
