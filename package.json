@@ -1,6 +1,6 @@
 {
   "name": "@beardedunicorn/react-native-avataaars-skia",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "React component for avataaars",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
