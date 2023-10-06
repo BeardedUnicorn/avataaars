@@ -11,7 +11,7 @@ import {ImageSVG, Skia} from "@shopify/react-native-skia";
 // import { default as PieceComponent } from './avatar/piece';
 
 export interface Props {
-  avatarStyle: string
+  avatarStyle: AvatarStyle
   backgroundColor?: string
   style?: React.CSSProperties
   topType?: string
@@ -105,7 +105,7 @@ class AvatarComponent extends React.Component<Props> {
 // }
 
 
-export const AvatarReactNativeSkia: React.SFC<Props & { size }> = ({ size, ...childProps }) => {
+export const AvatarReactNativeSkia: React.FC<Props & { size }> = ({ size, ...childProps }) => {
   const pixelRatio = PixelRatio.getPixelSizeForLayoutSize(size);
   const svg = Skia.SVG.MakeFromString(ReactDOMServer.renderToString(
     <AvatarComponent
@@ -129,7 +129,7 @@ export const AvatarReactNativeSkia: React.SFC<Props & { size }> = ({ size, ...ch
 }
 
 
-export const AvatarReactNativeSvg: React.SFC<Props & { size }> = ({ size, ...childProps }) => {
+export const AvatarReactNativeSvg: React.FC<Props & { size }> = ({ size, ...childProps }) => {
   return (
     <SvgCss
       xml={ReactDOMServer.renderToString(

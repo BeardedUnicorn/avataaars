@@ -15,6 +15,7 @@ function getComponentOptionValue (component: React.ComponentClass) {
 export interface Props {
   option: Option
   defaultOption: React.ComponentClass | string
+  children?: React.ReactNode
 }
 
 export default class Selector extends React.Component<Props> {
@@ -23,7 +24,10 @@ export default class Selector extends React.Component<Props> {
   }
 
   private get optionContext (): OptionContext {
-    return this.context.optionContext
+    if (typeof this.context !== 'object' || !this.context || !('optionContext' in this.context)) {
+      throw new Error('optionContext is not available in the context.');
+    }
+    return this.context.optionContext as OptionContext;
   }
 
   UNSAFE_componentWillMount () {

@@ -1,4 +1,7 @@
 import * as React from 'react';
-export default class Top extends React.Component {
-    render(): JSX.Element;
+export interface TopProps {
+    children?: React.ReactNode;
+}
+export default class Top extends React.Component<TopProps> {
+    render(): React.JSX.Element;
 }

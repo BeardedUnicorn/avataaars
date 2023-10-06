@@ -3,8 +3,9 @@ import { uniqueId } from '../../unique_id'
 
 import FacialHair from './facialHair'
 import HairColor from './HairColor'
+import { TopProps } from './index'
 
-export default class ShortHairSides extends React.Component {
+export default class ShortHairSides extends React.Component<TopProps> {
   static optionValue = 'ShortHairSides'
   private mask1 = uniqueId('react-mask-')
   private mask2 = uniqueId('react-mask-')

@@ -1,8 +1,9 @@
 import * as React from 'react';
-export default class NoHair extends React.Component {
+import { TopProps } from './index';
+export default class NoHair extends React.Component<TopProps> {
     static optionValue: string;
     private filter1;
     private mask1;
     private path1;
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }

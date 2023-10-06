@@ -2,8 +2,9 @@ import * as React from 'react'
 import { uniqueId } from '../../unique_id'
 
 import FacialHair from './facialHair'
+import { TopProps } from './index'
 
-export default class NoHair extends React.Component {
+export default class NoHair extends React.Component<TopProps> {
   static optionValue = 'NoHair'
 
   private filter1 = uniqueId('react-filter-')

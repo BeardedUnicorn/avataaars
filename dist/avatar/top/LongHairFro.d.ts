@@ -1,10 +1,11 @@
 import * as React from 'react';
-export default class LongHairFro extends React.Component {
+import { TopProps } from './index';
+export default class LongHairFro extends React.Component<TopProps> {
     static optionValue: string;
     private mask1;
     private mask2;
     private path1;
     private path2;
     private path3;
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }

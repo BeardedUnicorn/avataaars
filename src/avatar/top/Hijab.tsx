@@ -2,8 +2,9 @@ import * as React from 'react'
 import { uniqueId } from '../../unique_id'
 
 import HatColor from './HatColor'
+import { TopProps } from './index'
 
-export default class Hijab extends React.Component {
+export default class Hijab extends React.Component<TopProps> {
   static optionValue = 'Hijab'
 
   private filter1 = uniqueId('react-filter-')

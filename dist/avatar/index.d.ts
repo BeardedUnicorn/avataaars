@@ -9,5 +9,5 @@ export interface Props {
     style?: React.CSSProperties;
 }
 export default class Avatar extends React.Component<Props> {
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }

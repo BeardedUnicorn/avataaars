@@ -1,5 +1,6 @@
 import * as React from 'react';
-export default class WinterHat1 extends React.Component {
+import { TopProps } from './index';
+export default class WinterHat1 extends React.Component<TopProps> {
     static optionValue: string;
     private filter1;
     private mask1;
@@ -7,5 +8,5 @@ export default class WinterHat1 extends React.Component {
     private path1;
     private path2;
     private path3;
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }

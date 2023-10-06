@@ -37,7 +37,11 @@ import WinterHat3 from './WinterHat3'
 import WinterHat4 from './WinterHat4'
 import { Selector, TopOption } from '../../options'
 
-export default class Top extends React.Component {
+export interface TopProps {
+    children?: React.ReactNode
+}
+
+export default class Top extends React.Component<TopProps> {
   render () {
     const { children } = this.props
     return (
